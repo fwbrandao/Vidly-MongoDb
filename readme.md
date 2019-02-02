@@ -61,3 +61,5 @@ On Mac:
 On Windows:
 
     set vidly_jwtPrivateKey=yourSecureKey
+# vidly-mongoDb
+# Vidly-MongoDb
