@@ -2,5 +2,11 @@
   "jwtPrivateKey": "unsecureKey",
   "db": "mongodb://localhost/vidly",
   "port": "3900",
+<<<<<<< HEAD
   "requiresAuth": false
 }
+=======
+  "requiresAuth": true
+}
+
+>>>>>>> 1c1f2a946d40587b8b6fa7bb808fd9165fa77589
