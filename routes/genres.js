@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   const genres = await Genre.find()
-    .select("-__v")
+    .select("__v")
     .sort("name");
   res.send(genres);
 });
@@ -51,7 +51,7 @@ router.delete("/:id", [auth, admin, validateObjectId], async (req, res) => {
 });
 
 router.get("/:id", validateObjectId, async (req, res) => {
-  const genre = await Genre.findById(req.params.id).select("-__v");
+  const genre = await Genre.findById(req.params.id).select("__v");
 
   if (!genre)
     return res.status(404).send("3 The genre with the given ID was not found.");
