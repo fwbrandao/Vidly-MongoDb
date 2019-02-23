@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   const movies = await Movie.find()
-    .select("-__v")
+    .select("__v")
     .sort("name");
   res.send(movies);
 });
