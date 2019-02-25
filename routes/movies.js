@@ -76,7 +76,7 @@ router.get("/:id", validateObjectId, async (req, res) => {
   console.log('validateObjectId  >>>>>>>>> ', validateObjectId)
   console.log('req >>>>>>>>', req)
   console.log('params >>>>>>>>', req.params)
-  const movie = await Movie.findById(req.params._id);
+  const movie = await Movie.findById(req.params.id);
 
   if (!movie)
     return res.status(404).send("333 The movie with the given ID was not found.");
