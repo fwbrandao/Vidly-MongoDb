@@ -73,6 +73,9 @@ router.delete("/:id", [auth, admin], async (req, res) => {
 });
 
 router.get("/:id", validateObjectId, async (req, res) => {
+  console.log('validateObjectId  >>>>>>>>> ', validateObjectId)
+  console.log('req >>>>>>>>', req)
+  console.log('params >>>>>>>>', req.params)
   const movie = await Movie.findById(req.params.id);
 
   if (!movie)
