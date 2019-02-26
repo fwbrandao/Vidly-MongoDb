@@ -10,7 +10,7 @@ const router = express.Router();
 const validate = require('../middleware/validate');
 
 router.get("/", async (req, res) => {
-  const movies = await Movie.find().sort("name");
+  const movies = await Movie.find().select("-__v").sort("name");
   res.send(movies);
 });
 
@@ -76,7 +76,7 @@ router.get("/:id", validateObjectId, async (req, res) => {
   console.log('validateObjectId  >>>>>>>>> ', validateObjectId)
   console.log('req >>>>>>>>', req)
   console.log('params >>>>>>>>', req.params)
-  const movie = await Movie.findById(req.params.id);
+  const movie = await Movie.findById(req.params.id).select("-__v");
 
   if (!movie)
     return res.status(404).send("333 The movie with the given ID was not found.");
